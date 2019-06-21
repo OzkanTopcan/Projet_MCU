@@ -1,0 +1,73 @@
+<html>
+    <meta charset="utf-8" />
+    <title>Meteo</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  font-size:20px;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url(/static/background1.jpg);
+  min-height: 62%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#Capteur" class="w3-bar-item w3-button">Capteur</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+
+  </div>
+</div>
+
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+<div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</header>
+<div class="w3-container" style="padding:16px 16px" id="Capteur">
+  <p>
+    Télécharge les dernières données des capteurs en cliquant sur :
+    <a href="/static/history.txt" download="history.txt"><img src="/static/Button3.png"></a> </br></br>
+        Avant de deplacer le dispositif, vider les bases en cliquant sur :
+    <a href="{{ url_for('appel_truncate')}}"><img src="/static/Button3.png"></a>
+  </p>
+<p>
+    <label for="Capteur1"  id="Capteur1" >Capteur de temperature a la surface : </label>
+    <input  name="Capteur1" type="text" readonly="readonly" id="{{capteur1}}" value="{{capteur1}}°"/>
+</p>
+<p>
+    <label for="Capteur2"  id="Capteur2" >Capteur de temperature de l'air :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input  name="Capteur2" type="text" readonly="readonly" id="{{capteur2}}" value="{{capteur2}}°"/>
+</p>
+<p> 
+    <label for="Capteur3"  id="Capteur3" >Capteur luminosite : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input  name="Capteur3" type="text" readonly="readonly" id="{{capteur3}}" value="{{capteur3}}"/>
+</p>
+    <img src="/static/gif_meteo.gif">
+</div>
+</body>
+</html>
